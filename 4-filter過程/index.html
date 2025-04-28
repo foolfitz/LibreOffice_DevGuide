@@ -1,0 +1,342 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>4 filter過程 - LibreOffice DevGuide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#filter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LibreOffice DevGuide" class="md-header__button md-logo" aria-label="LibreOffice DevGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LibreOffice DevGuide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4 filter過程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LibreOffice DevGuide" class="md-nav__button md-logo" aria-label="LibreOffice DevGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LibreOffice DevGuide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      filter 過程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="filter 過程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      加載內容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>4 filter過程</h1>
+
+<h2 id="filter">filter 過程</h2>
+<p>在LibreOffice中，加載或保存內容的整個過程是基於UNO服務的模塊化系統。其中一些是抽象的（如<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1ExtendedTypeDetection.html">com.sun.star.document.ExtendedTypeDetection</a>和過濾器服務），因此允許綁定實現它們的可擴展實例集，其他的（如<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1TypeDetection.html">com.sun.star.document.TypeDetection</a>服務）定義了工作流程。由於它們像任何UNO服務一樣可交換，整個過程（查找和使用過濾器）可以改變，而不需要更改其他涉及的組件。</p>
+<h3 id="_1">加載內容</h3>
+<p>將內容加載到LibreOffice的最通用方法是調用合適對象的<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1frame_1_1XComponentLoader.html#:~:text=%E2%97%86-,loadComponentFromURL%28%29">loadComponentFromURL()</a>方法。這樣的對象可能是<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1Desktop.html">com.sun.star.frame.Desktop</a>對象或<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1Frame.html">com.sun.star.frame.Frame</a>服務的任何實例。以這種方式加載的內容總是會在框架對象中結束，如果在桌面上調用，該方法將使用上面鏈接的API文檔中描述的一些傳遞的參數來查找或創建這個框架。然後它會將調用轉發給這個框架。這裡有一個顯示在以下段落中解釋的工作流程的圖表。</p>
+<p><img alt="一般過濾過程" src="LibreOffice%20Developer's%20Guide_%20Chapter%206%20-%20Office%20Development%20-%20The%20Document%20Foundation%20Wiki_files/500px-Sequence_diagram_load_url.png" /></p>
+<p>內容將作為<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1MediaDescriptor.html">com.sun.star.document.MediaDescriptor</a>服務傳遞給<code>loadComponentFromURL()</code>調用，這裡是作為<a href="https://api.libreoffice.org/docs/idl/ref/structcom_1_1sun_1_1star_1_1beans_1_1PropertyValue.html">com.sun.star.beans.PropertyValue</a>的序列實現的。在大多數情況下，它將包含多個屬性，這些屬性允許創建實現<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1io_1_1XStream.html">com.sun.star.io.XStream</a>或<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1io_1_1XInputStream.html">com.sun.star.io.XInputStream</a>的對象，該對象可用於讀取內容。它還可能包含一些屬性，其他對象（過濾器、模型、控制器、框架等）的代碼可以用來控制加載過程。如果不需要傳遞屬性，並且文件內容僅由URL指定，則可以將URL作為顯式參數傳遞，而MediaDescriptor可以保持為空。要了解如何在過濾器實現或其他地方使用MediaDescriptor，尤其是如何從中檢索流，請參閱關於加載文檔的章節中的<a href="#MediaDescriptor">MediaDescriptor</a>文檔。</p>
+<p>組件加載器使用<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1FrameLoader.html">com.sun.star.frame.FrameLoader</a>或<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1SynchronousFrameLoader.html">com.sun.star.frame.SynchronousFrameLoader</a>服務的實例。將使用哪個框架加載器實例取決於內容的類型。必須首先檢測此類型（見下文），基於TypeDetection配置，該配置允許為特定類型註冊過濾器或框架加載器。LibreOffice有一個通用的框架加載器服務，當檢測到的類型沒有自己的框架加載器註冊但有過濾器時使用。如果為特定類型註冊了自定義框架加載器，則取決於該實現如何執行內容加載過程以及是否使用過濾器。由於當前主題是"過濾器"，我們將在這裡專注於通用框架加載器。</p>
+<blockquote>
+<p><strong>注意：</strong>
+<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1FrameLoader.html">com.sun.star.frame.FrameLoader</a>服務已被棄用。如果註冊了自定義框架加載器，它應該是<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1SynchronousFrameLoader.html">com.sun.star.frame.SynchronousFrameLoader</a>服務。</p>
+</blockquote>
+<p>要基於過濾器加載內容，首先必須檢測哪個過濾器是正確的，以及必須為此過濾器使用哪種文檔類型。由於基本上任何內容類型都可以加載到任何可用的文檔類型中，甚至相同的類型可以以不同的方式加載到相同的文檔類型中，我們可能會為特定的內容類型找到許多註冊的過濾器。通過評估MediaDescriptor中傳遞的內容來找到正確的過濾器是<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1TypeDetection.html">com.sun.star.document.TypeDetection</a>服務的工作。此檢測的結果將是內容類型的名稱、所需過濾器的名稱以及應該是加載過程目標的文檔模型的服務名稱。這些結果將被放入MediaDescriptor中，以便後來調用的其他對象中的任何代碼都可以使用該信息。通過在傳遞給組件加載器的MediaDescriptor中提供內容的類型名稱或文檔服務名稱，可以將過濾器的搜索範圍縮小到符合這些條件的過濾器子集。通過在MediaDescriptor中提供過濾器名稱，甚至可以完全繞過檢測（儘管組件加載器仍然會將匹配的類型和文檔服務名稱添加到MediaDescriptor中）。由於類型檢測的整個過程完全基於配置，它將在關於<a href="#Configuring_a_Filter_in_OpenOffice.org">TypeDetection配置</a>的章節中描述。</p>
+<p>下一步將由通用<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1frame_1_1SynchronousFrameLoader.html">com.sun.star.frame.SynchronousFrameLoader</a>服務管理，並將目標框架交給它。框架加載器將使用在MediaDescriptor中找到的文檔服務名稱創建所需類型的文檔。它還將獲取檢測到的過濾器名稱，並要求<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1FilterFactory.html">com.sun.star.document.FilterFactory</a>服務創建過濾器，可能用一些必要的參數初始化它，並要求它將內容導入到新文檔中（這在<a href="#Filter">關於過濾器</a>的章節中描述）。如果所有這些都順利進行，它將通過為文檔模型創建控制器對象將文檔附加到目標框架。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

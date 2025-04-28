@@ -1,0 +1,736 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+    
+    
+      
+        <title>13 FrameLoader的屬性 - LibreOffice DevGuide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2afb09e1.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#xml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LibreOffice DevGuide" class="md-header__button md-logo" aria-label="LibreOffice DevGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LibreOffice DevGuide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              13 FrameLoader的屬性
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LibreOffice DevGuide" class="md-nav__button md-logo" aria-label="LibreOffice DevGuide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LibreOffice DevGuide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      基於XML的過濾器開發
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基於XML的過濾器開發
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基於XML的過濾器開發">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      簡介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例實現
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      編寫過濾組件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="編寫過濾組件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ximportfilter" class="md-nav__link">
+    <span class="md-ellipsis">
+      XImportFilter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xexportfilter" class="md-nav__link">
+    <span class="md-ellipsis">
+      XExportFilter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xdocumenthandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      XDocumentHandler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      導入器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="導入器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ximportfilter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      評估XImportFilter參數
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      導入器過濾
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      解析結果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      導出器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="導出器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xexportfilter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      評估XExportFilter參數
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      導出器過濾
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML過濾器檢測
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XML過濾器檢測">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      深度檢測的要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      擴展文件類型定義
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extendedtypedetection" class="md-nav__link">
+    <span class="md-ellipsis">
+      ExtendedTypeDetection服務實現
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedetectionxcu-detectservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      TypeDetection.xcu DetectServices條目
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>13 FrameLoader的屬性</h1>
+
+<h2 id="xml">基於XML的過濾器開發</h2>
+<h2 id="xml_1">基於XML的過濾器開發</h2>
+<h3 id="_1">簡介</h3>
+<p>本章概述了使用XML過濾器適配器框架的基於XML的過濾組件的開發。更多信息也可在<a href="https://www.openoffice.org/xml/filter/">https://www.openoffice.org/xml/filter/</a>獲取。XML過濾器適配器是<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1document_1_1XFilter.html">com.sun.star.document.XFilter</a>的通用實現。它被設計為可重用的，並提供設計和引用基於XML的導入和導出過濾器的標準方法。XML過濾器適配器本身不執行任何過濾功能，而是用於實例化過濾組件。</p>
+<p>XML過濾器適配器框架的優點是你不必使用文檔模型從導入文件創建文檔，也不必迭代文檔模型將其導出到不同的文件格式。相反，你可以使用LibreOffice XML文件格式進行導入和導出。導入時，你解析導入文件並將LibreOffice XML發送到過濾器適配器，它會在GUI中為你創建文檔。導出時，辦公室會發送當前文檔的描述作為LibreOffice XML，這樣你就可以導出而不必迭代文檔模型。</p>
+<p>如<a href="#Filter">過濾器</a>章節所述，過濾器通過其方法<code>filter()</code>工作。在基於XML的過濾器的情況下，此方法由XML過濾器適配器實現。基於其<a href="#Sample_configuration_for_an_XML_based_filter">"UserData"屬性</a>，它實例化XML導入過濾器並使用其方法<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XImportFilter.html#:~:text=%E2%97%86-,importer%28%29">importer()</a>傳遞源的MediaDescriptor、LibreOffice XML的專用XML文檔處理程序和用戶數據。導入過濾器必須讀取導入源並將LibreOffice XML傳遞給在<code>importer()</code>調用中接收的文檔處理程序，模擬調用解析器回調函數的SAX解析器。</p>
+<p>在導出過濾器的情況下，相同的<code>filter()</code>調用將使用"UserData"屬性實例化XML導出過濾器並使用其方法<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XExportFilter.html#:~:text=%E2%97%86-,exporter%28%29">exporter()</a>傳遞目標位置和用戶數據。在這種情況下，辦公室期望導出過濾器是<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a>，能夠處理LibreOffice XML。辦公室創建帶有LibreOffice XML的導出流，並解析此XML，以便導出過濾器接收SAX回調並可以將它們翻譯成任何必要的內容，將結果寫入在<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XExportFilter.html#:~:text=%E2%97%86-,exporter%28%29">exporter()</a>調用中接收的目標。</p>
+<h3 id="_2">示例實現</h3>
+<p>有Java和C++實現的_Flat LibreOffice XML_讀取器和寫入器，它們使用XML過濾器適配器。這些旨在作為示例過濾器組件實現，並提供了一個骨架過濾器組件，可以由希望創建自己的過濾組件的開發者擴展。它們託管在git中</p>
+<pre><code>odk/examples/DevelopersGuide/OfficeDev/FilterDevelopment/FlatXmlFilter_java
+</code></pre>
+<p>和</p>
+<pre><code>odk/examples/DevelopersGuide/OfficeDev/FilterDevelopment/FlatXmlFilter_cpp
+</code></pre>
+<h3 id="_3">編寫過濾組件</h3>
+<p>過濾組件必須實現以下接口，如<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1xml_1_1ImportFilter.html">com.sun.star.xml.ImportFilter</a>服務和<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1xml_1_1ExportFilter.html">com.sun.star.xml.ExportFilter</a>服務所描述：</p>
+<p><em>導入器：</em></p>
+<p><a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1xml_1_1XMLImportFilter.html">com.sun.star.xml.XMLImportFilter</a></p>
+<p><em>導出器：</em></p>
+<p><a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1xml_1_1XMLExportFilter.html">com.sun.star.xml.XMLExportFilter</a>和<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a></p>
+<h4 id="ximportfilter">XImportFilter</h4>
+<p>服務<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1xml_1_1XMLImportFilter.html">com.sun.star.xml.XMLImportFilter</a>定義了一個具有以下方法的接口：</p>
+<pre><code>boolean importer(
+[in] sequence&lt; com::sun::star::beans::PropertyValue &gt; aSourceData,
+[in] com::sun::star::xml::sax::XDocumentHandler xDocHandler,
+[in] sequence&lt; string &gt; msUserData )
+</code></pre>
+<p><code>aSourceData</code>是一個<code>MediaDescriptor</code>，可用於獲取以下信息：</p>
+<ul>
+<li>一個<code>XInputStream</code></li>
+<li>這是一個附加到要讀取的源的流。這可以是文件或其他一些數據源。</li>
+<li><code>Filename</code></li>
+<li>這是磁盤上文件的名稱，輸入流來自於此。</li>
+<li><code>Url</code></li>
+<li>這是描述正在讀取的位置的URL。</li>
+</ul>
+<p><code>xDocHandler</code>是在解析<code>XInputStream</code>時可以使用的SAX事件處理程序，它可能包含或不包含LibreOffice XML。在LibreOffice可以讀取此流之前，需要將其轉換為LibreOffice XML。</p>
+<p><code>msUserData</code>是<code>Strings</code>數組，包含在<em>TypeDetection.xcu</em>文件中的<code>Filter</code>定義的<code>UserData</code>部分提供的信息。</p>
+<h4 id="xexportfilter">XExportFilter</h4>
+<p><a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XExportFilter.html">com.sun.star.xml.XExportFilter</a>定義了一個具有以下方法的接口：</p>
+<pre><code>boolean exporter(
+[in] sequence&lt; com::sun::star::beans::PropertyValue &gt; aSourceData,
+[in] sequence&lt; string &gt; msUserData )
+</code></pre>
+<p><code>aSourceData</code>和<code>msUserData</code>包含與導入器中相同類型的信息，只是<code>MediaDescriptor</code>包含一個<code>XOutputStream</code>，可用於寫入。</p>
+<h4 id="xdocumenthandler">XDocumentHandler</h4>
+<p>當導出發生時，新的過濾組件還必須是一個<code>XDocumentHandler</code>，以允許基於SAX事件的輸出被過濾（如果需要）。因此，<code>exporter</code>不傳遞<code>XDocumentHandler</code>，任何由XML過濾器適配器使用的導出器都必須實現<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a>接口。</p>
+<blockquote>
+<p><strong>注意：</strong>
+為了使基於Java的組件有效運作，一組包裝器類已添加到<em>javaunohelper</em>包中。這些文件允許使用與普通Java InputStream或OutputStream相同的方法訪問XInputStream或XOutputStream。這些類位於<em>javaunohelper</em>包中：
+- com.sun.star.lib.uno.adapter.XInputStreamToInputStreamAdapter
+- com.sun.star.lib.uno.adapter.XOutputStreamToOutputStreamAdapter</p>
+<p>有關這些助手類用法的更多信息，請參見flatxmljava示例。</p>
+</blockquote>
+<h3 id="_4">導入器</h3>
+<h4 id="ximportfilter_1">評估XImportFilter參數</h4>
+<p>編寫導入器通常從從<code>MediaDescriptor</code>和<code>userData</code>中提取所需變量開始。這些變量對於過濾組件正確操作是必需的。根據單個過濾器的需求，首先要做的是從稱為接口定義中的<code>aSourceData</code>的<code>MediaDescriptor</code>提取信息。這可以通過以下方式實現：</p>
+<p>獲取<code>MediaDescriptor</code>中的元素數量</p>
+<pre><code class="language-cpp">sal_Int32 nLength = aSourceData.getLength();
+</code></pre>
+<p>遍歷<code>MediaDescriptor</code>以找到所需的信息：輸入流，文件名或URL。</p>
+<pre><code class="language-cpp">for (sal_Int32 i = 0; i &lt; nLength; i++) {
+        if (pValue[i].Name == &quot;InputStream&quot;)
+                pValue[i].Value &gt;&gt;= xInputStream;
+        else if (pValue[i].Name == &quot;FileName&quot;)
+                pValue[i].Value &gt;&gt;= sFileName;
+        else if (pValue[i].Name == &quot;URL&quot;)
+                pValue[i].Value &gt;&gt;= sURL;
+}
+</code></pre>
+<p>傳遞給<code>importer()</code>的<code>msUserData</code>參數包含定義過濾器如何操作的信息，因此必須根據需要引用此信息。</p>
+<h4 id="_5">導入器過濾</h4>
+<p>現在已經獲得了一個包含所有要處理信息的<code>XInputStream</code>實現。從過濾角度來看，您可以從這個流中讀取並執行任何必要的處理，以便將輸入轉換為LibreOffice XML。一旦完成，您需要將結果寫入可以解析為LibreOffice內部格式的地方。可以使用<code>Pipe</code>來實現這一點。<code>Pipe</code>是一種可以寫入和讀取的緩衝形式。對於<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XImportFilter.html#:~:text=%E2%97%86-,importer">導入器</a>，從從<code>MediaDescriptor</code>提取的<code>XInputStream</code>讀取，一旦過濾完成，寫入已創建的<code>Pipe</code>。在進行解析時可以讀取這個<code>Pipe</code>。以下是如何創建<code>Pipe</code>：</p>
+<pre><code class="language-cpp">Reference &lt;XInterface&gt; xPipe;
+
+// We Create our pipe
+xPipe= XflatXml::xMSF-&gt;createInstance(OUString::createFromAscii(&quot;com.sun.star.io.Pipe&quot;));
+
+// We get an inputStream to our Pipe
+Reference&lt; com::sun::star::io::XInputStream &gt; xPipeInput (xPipe,UNO_QUERY);
+
+// We get an OutputStream to our Pipe
+Reference&lt; com::sun::star::io::XOutputStream &gt; xTmpOutputStream (xPipe,UNO_QUERY);
+</code></pre>
+<p>可以從<code>XInputStream</code>讀取，可以向<code>XOutputstream</code>寫入。</p>
+<h4 id="_6">解析結果</h4>
+<p>一旦產生了所需的LibreOffice XML並將其寫入<code>Pipe</code>的<code>XOutputStream</code>，就可以在<code>XDocumentHandler</code>的幫助下解析<code>Pipe</code>的<code>XinputStream</code>。</p>
+<pre><code class="language-cpp">// Create a Parser
+const OUString sSaxParser(&quot;com.sun.star.xml.sax.Parser&quot;);
+Reference &lt; com::sun::star::xml::sax::XParser &gt; xSaxParser(xMSF-&gt;createInstance(sSaxParser), UNO_QUERY);
+
+// Create an InputSource using the Pipe
+com::sun::star::xml::sax::InputSource aInput;
+aInput.sSystemId = sFileName;           // File Name
+aInput.aInputStream = xPipeInput;       // Pipe InputStream
+
+// Set the SAX Event Handler
+xSaxParser-&gt;setDocumentHandler(xHandler);
+
+// Parse the result
+try {
+  xSaxParser-&gt;parseStream(aInput);
+}
+catch (Exception &amp;exc) {
+  // Perform exception handling
+}
+</code></pre>
+<p>假設XML有效，不會拋出異常，導入器將返回true。在這個階段，過濾完成，導入的文檔將顯示出來。</p>
+<h3 id="_7">導出器</h3>
+<h4 id="xexportfilter_1">評估XExportFilter參數</h4>
+<p><a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XExportFilter.html#:~:text=%E2%97%86-,exporter%28%29">exporter()</a>方法的操作方式與<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XImportFilter.html#:~:text=%E2%97%86-,importer%28%29">importer()</a>大致相同，只是導出器不使用提供的<code>XDocumentHandler</code>，而是本身是<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a>實現。</p>
+<p>當調用<code>exporter()</code>方法時，需要提取過濾器使用的必要變量。這與導入器發生的情況相同，只是<code>MediaDescriptor</code>包含<code>XOutputStream</code>，而不是導入器的<code>XInputStream</code>。一旦提取了變量（在某些情況下創建了<code>Pipe</code>），<code>exporter()</code>方法返回。它在此階段不執行過濾。</p>
+<blockquote>
+<p><strong>注意：</strong>
+只有在輸出在由<code>XDocumentHandler</code>處理後需要進一步處理時，才需要pipe。否則，<code>XDocumentHandler</code>實現的結果可以直接寫入提供的<code>XOutputStream</code>。例如，這是FlatXML過濾器的情況。</p>
+</blockquote>
+<h4 id="_8">導出器過濾</h4>
+<p>在<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1XExportFilter.html#:~:text=%E2%97%86-,exporter%28%29">exporter()</a>方法返回後，XML過濾器適配器調用<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a>方法來解析XML輸出。</p>
+<p>對於過濾，使用<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a>實現。這由一組SAX事件處理方法組成，這些方法定義了如何處理特定的XML標籤。這些方法是：</p>
+<pre><code class="language-cpp">startDocument() {
+}
+endDocument() {
+}
+startElement() {
+}
+endElement() {
+}
+charactors() {
+}
+ignorableWhitespace() {
+}
+processingInstruction() {
+}
+setDocumentLocator() {
+}
+</code></pre>
+<p>此事件處理的結果可以處理並寫入從<code>MediaDescriptor</code>提取的<code>XOutputStream</code>。</p>
+<h3 id="xml_2">XML過濾器檢測</h3>
+<p>符合不同DTD規範的XML文件數量意味著單一過濾器和文件類型定義不足以處理所有可能的可用格式。為了允許LibreOffice處理多個過濾器定義和實現，有必要實現一個額外的過濾器檢測模塊，該模塊能夠根據其<code>DocType</code>聲明確定正在讀取的XML文件的類型。</p>
+<p>為了實現這一點，可以實現一個過濾器檢測服務<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1ExtendedTypeDetection.html">com.sun.star.document.ExtendedTypeDetection</a>，它能夠處理和區分許多不同的基於XML的文件格式。這種類型的服務取代了使用文件後綴來確定類型的基本<em>flat</em>檢測，而是執行<em>deep</em>檢測，使用文件的內部結構和內容來檢測其真實類型。</p>
+<h4 id="_9">深度檢測的要求</h4>
+<p>實現能夠識別一個或多個唯一XML類型的深度檢測模塊有三個要求。這些包括：</p>
+<ul>
+<li>用於更詳細描述格式的擴展類型定義（<em>TypeDetection.xcu</em>）。</li>
+<li><code>DetectService</code>實現。</li>
+<li><code>DetectService</code>定義（<em>TypeDetection.xcu</em>）。</li>
+</ul>
+<h4 id="_10">擴展文件類型定義</h4>
+<p>由於許多不同的XML文件可以符合不同的DTD，特定XML文件的類型定義需要擴展。為此，可以將部分或全部<code>DocType</code>信息包含為文件類型定義的一部分。此信息作為類型節點的<code>ClipboardFormat</code>屬性的一部分持有。唯一的命名空間或前言在序列中的這一點識別字符串為<code>DocType</code>聲明。</p>
+<p><strong>示例類型定義：</strong></p>
+<pre><code class="language-xml">&lt;node oor:name=&quot;writer_DocBook_File&quot; oor:op=&quot;replace&quot;&gt;
+    &lt;prop oor:name=&quot;UIName&quot;&gt;
+        &lt;value XML:lang=&quot;en-US&quot;&gt;DocBook&lt;/value&gt;
+    &lt;/prop&gt;
+    &lt;prop oor:name=&quot;Data&quot;&gt;
+        &lt;value&gt;0,,doctype:-//OASIS//DTD DocBook XML V4.1.2//EN,,XML,20002,&lt;/value&gt;
+    &lt;/prop&gt;
+&lt;/node&gt;
+</code></pre>
+<h4 id="extendedtypedetection">ExtendedTypeDetection服務實現</h4>
+<p>為了使類型檢測代碼作為<code>ExtendedTypeDetection</code>服務運行，您必須實現<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1document_1_1XExtendedFilterDetection.html">com.sun.star.document.XExtendedFilterDetection</a>接口定義中定義的<code>detect()</code>方法：</p>
+<pre><code class="language-cpp">string detect( [inout]sequence&lt;com::sun::star::beans::PropertyValue &gt; Descriptor );
+</code></pre>
+<p>此方法為您提供了一個<code>PropertyValue</code>序列，您可以從中提取當前的<code>TypeName</code>和正在加載的文件的<code>URL</code>：</p>
+<pre><code class="language-cpp">::rtl::OUString SAL_CALL FilterDetect::detect(com::sun::star::uno::Sequence&lt; com::sun::star::beans::PropertyValue &gt;&amp; aArguments )
+{
+const PropertyValue * pValue = aArguments.getConstArray();
+sal_Int32 nLength;
+::rtl::OString resultString;
+nLength = aArguments.getLength();
+for (sal_Int32 i = 0; i &lt; nLength; i++) {
+        if (pValue[i].Name == &quot;TypeName&quot;) {
+        }
+        else if (pValue[i].Name == &quot;URL&quot;) {
+                pValue[i].Value &gt;&gt;= sUrl;
+        }
+}
+</code></pre>
+<p>一旦您有了文件的URL，您可以使用它創建一個<code>::ucb::Content</code>，從中可以打開文件的<code>XInputStream</code>：</p>
+<pre><code class="language-cpp">Reference&lt; com::sun::star::ucb::XCommandEnvironment &gt; xEnv;
+::ucb::Content aContent(sUrl,xEnv);
+xInStream = aContent.openStream();
+</code></pre>
+<p>現在可以使用這個<code>XInputStream</code>讀取正在加載的文件的標頭。由於文件中<code>DocType</code>信息的確切位置未知，將讀取前1000字節的信息：</p>
+<pre><code class="language-cpp">::rtl::OString resultString;
+com::sun::star::uno::Sequence&lt; sal_Int8 &gt; aData;
+long bytestRead = xInStream-&gt;readBytes (aData, 1000);
+resultString = ::rtl::OString( (const char *)aData.getConstArray(), bytestRead);
+</code></pre>
+<p>一旦有了這些信息，就可以開始尋找描述正在加載的文件的類型。為此，需要獲取當前支持的類型列表：</p>
+<pre><code class="language-cpp">Reference &lt;XNameAccess&gt; xTypeCont(mxMSF-&gt;createInstance(OUString::createFromAscii(
+                                &quot;com.sun.star.document.TypeDetection&quot; )),UNO_QUERY);
+Sequence &lt;::rtl::OUString&gt; myTypes= xTypeCont-&gt;getElementNames();
+nLength = myTypes.getLength();
+</code></pre>
+<p>對於這些類型中的每一個，必須首先確定<code>ClipboardFormat</code>屬性是否包含DocType：</p>
+<pre><code class="language-cpp">Loc_of_ClipboardFormat=...;
+Sequence&lt;::rtl::OUString&gt; ClipboardFormatSeq;
+Type_Props[Loc_of_ClipboardFormat].Value &gt;&gt;=ClipboardFormatSeq ;
+while() {
+        if(ClipboardFormatSeq.match(OUString::createFromAscii(&quot;doctype:&quot;) {
+                    //if it contains a DocType, start to compare to header
+        }
+}
+</code></pre>
+<p>可以檢查文件類型的所有可能的<code>DocType</code>聲明以確定匹配。如果找到匹配，則返回與匹配相對應的類型。如果找不到匹配，則返回空字符串。這將強制LibreOffice進入平面檢測模式。</p>
+<h4 id="typedetectionxcu-detectservices">TypeDetection.xcu DetectServices條目</h4>
+<p>現在您已經創建了<code>ExtendedTypeDetection</code>服務實現，需要告訴LibreOffice何時使用此服務。</p>
+<p>首先創建一個<code>DetectServices</code>節點（除非已經存在一個），然後添加有關已實現的檢測服務的特定信息，即服務的名稱和使用它的文件類型。</p>
+<pre><code class="language-xml">&lt;node oor:name=&quot;DetectServices&quot;&gt;
+&lt;node oor:name=&quot;com.sun.star.comp.filters.XMLDetect&quot; oor:op=&quot;replace&quot;&gt;
+        &lt;prop oor:name=&quot;ServiceName&quot;&gt;
+                &lt;value XML:lang=&quot;en-US&quot;&gt;com.sun.star.comp.filters.XMLDetect&lt;/value&gt;
+        &lt;/prop&gt;
+        &lt;prop oor:name=&quot;Types&quot;&gt;
+                &lt;value&gt;writer_DocBook_File&lt;/value&gt;
+                &lt;value&gt;writer_Flat_XML_File&lt;/value&gt;
+        &lt;/prop&gt;
+&lt;/node&gt;
+&lt;/node&gt;
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
