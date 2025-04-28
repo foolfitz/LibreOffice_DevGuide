@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../12-FrameLoader%E7%9A%84%E5%B1%AC%E6%80%A7/">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>13 FrameLoader的屬性 - LibreOffice DevGuide</title>
+        <title>基於XML的 filter 開發 - LibreOffice DevGuide</title>
       
     
     
@@ -58,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#xml" class="md-skip">
+        <a href="#xml-filter" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              13 FrameLoader的屬性
+              基於XML的 filter 開發
             
           </span>
         </div>
@@ -205,18 +207,332 @@
   
 
     
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0-Integrating_Import_and_Export_Filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Integrating_Import_and_Export_Filters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-%E7%B0%A1%E4%BB%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    簡介
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    方法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-filter%E9%96%8B%E7%99%BC%E8%80%85%E6%AA%A2%E6%9F%A5%E8%A1%A8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    filter開發者檢查表
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-filter%E9%81%8E%E7%A8%8B/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    filter過程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-%E5%85%A7%E5%AE%B9%E5%84%B2%E5%AD%98/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    內容儲存
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6-filter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    filter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7-%E9%A1%9E%E5%9E%8B%E6%AA%A2%E6%B8%AC%E5%8F%8A%E5%85%B6%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    類型檢測及其配置
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8-%E9%A1%9E%E5%9E%8B%E7%9A%84%E5%B1%AC%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    類型的屬性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../9-filter%E7%9A%84%E5%B1%AC%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    filter 的屬性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-%E5%9F%BA%E6%96%BCXML%E7%9A%84filter%E7%9A%84%E7%A4%BA%E4%BE%8B%E9%85%8D%E7%BD%AE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    基於XML的filter的示例配置
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-filter%E9%81%B8%E9%A0%85/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    filter 選項
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-FrameLoader%E7%9A%84%E5%B1%AC%E6%80%A7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    FrameLoader 的屬性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    基於XML的 filter 開發
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    基於XML的 filter 開發
+    
+  </span>
+  
+
+      </a>
+      
+        
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -230,22 +546,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xml" class="md-nav__link">
+  <a href="#xml-filter" class="md-nav__link">
     <span class="md-ellipsis">
-      基於XML的過濾器開發
+      基於XML的 filter 開發
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#xml_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      基於XML的過濾器開發
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="基於XML的過濾器開發">
+    <nav class="md-nav" aria-label="基於XML的 filter 開發">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -384,7 +691,240 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#xml_2" class="md-nav__link">
+  <a href="#xml" class="md-nav__link">
+    <span class="md-ellipsis">
+      XML過濾器檢測
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XML過濾器檢測">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      深度檢測的要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      擴展文件類型定義
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extendedtypedetection" class="md-nav__link">
+    <span class="md-ellipsis">
+      ExtendedTypeDetection服務實現
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typedetectionxcu-detectservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      TypeDetection.xcu DetectServices條目
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#xml-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      基於XML的 filter 開發
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基於XML的 filter 開發">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      簡介
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例實現
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      編寫過濾組件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="編寫過濾組件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ximportfilter" class="md-nav__link">
+    <span class="md-ellipsis">
+      XImportFilter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xexportfilter" class="md-nav__link">
+    <span class="md-ellipsis">
+      XExportFilter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xdocumenthandler" class="md-nav__link">
+    <span class="md-ellipsis">
+      XDocumentHandler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      導入器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="導入器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ximportfilter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      評估XImportFilter參數
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      導入器過濾
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      解析結果
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      導出器
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="導出器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xexportfilter_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      評估XExportFilter參數
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      導出器過濾
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xml" class="md-nav__link">
     <span class="md-ellipsis">
       XML過濾器檢測
     </span>
@@ -455,10 +995,9 @@
 
 
 
-  <h1>13 FrameLoader的屬性</h1>
+  <h1>基於XML的 filter 開發</h1>
 
-<h2 id="xml">基於XML的過濾器開發</h2>
-<h2 id="xml_1">基於XML的過濾器開發</h2>
+<h2 id="xml-filter">基於XML的 filter 開發</h2>
 <h3 id="_1">簡介</h3>
 <p>本章概述了使用XML過濾器適配器框架的基於XML的過濾組件的開發。更多信息也可在<a href="https://www.openoffice.org/xml/filter/">https://www.openoffice.org/xml/filter/</a>獲取。XML過濾器適配器是<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1document_1_1XFilter.html">com.sun.star.document.XFilter</a>的通用實現。它被設計為可重用的，並提供設計和引用基於XML的導入和導出過濾器的標準方法。XML過濾器適配器本身不執行任何過濾功能，而是用於實例化過濾組件。</p>
 <p>XML過濾器適配器框架的優點是你不必使用文檔模型從導入文件創建文檔，也不必迭代文檔模型將其導出到不同的文件格式。相反，你可以使用LibreOffice XML文件格式進行導入和導出。導入時，你解析導入文件並將LibreOffice XML發送到過濾器適配器，它會在GUI中為你創建文檔。導出時，辦公室會發送當前文檔的描述作為LibreOffice XML，這樣你就可以導出而不必迭代文檔模型。</p>
@@ -506,9 +1045,11 @@
 <p>當導出發生時，新的過濾組件還必須是一個<code>XDocumentHandler</code>，以允許基於SAX事件的輸出被過濾（如果需要）。因此，<code>exporter</code>不傳遞<code>XDocumentHandler</code>，任何由XML過濾器適配器使用的導出器都必須實現<a href="https://api.libreoffice.org/docs/idl/ref/interfacecom_1_1sun_1_1star_1_1xml_1_1sax_1_1XDocumentHandler.html">com.sun.star.xml.sax.XDocumentHandler</a>接口。</p>
 <blockquote>
 <p><strong>注意：</strong>
-為了使基於Java的組件有效運作，一組包裝器類已添加到<em>javaunohelper</em>包中。這些文件允許使用與普通Java InputStream或OutputStream相同的方法訪問XInputStream或XOutputStream。這些類位於<em>javaunohelper</em>包中：
-- com.sun.star.lib.uno.adapter.XInputStreamToInputStreamAdapter
-- com.sun.star.lib.uno.adapter.XOutputStreamToOutputStreamAdapter</p>
+為了使基於Java的組件有效運作，一組包裝器類已添加到<em>javaunohelper</em>包中。這些文件允許使用與普通Java InputStream或OutputStream相同的方法訪問XInputStream或XOutputStream。這些類位於<em>javaunohelper</em>包中：</p>
+<ul>
+<li>com.sun.star.lib.uno.adapter.XInputStreamToInputStreamAdapter</li>
+<li>com.sun.star.lib.uno.adapter.XOutputStreamToOutputStreamAdapter</li>
+</ul>
 <p>有關這些助手類用法的更多信息，請參見flatxmljava示例。</p>
 </blockquote>
 <h3 id="_4">導入器</h3>
@@ -594,7 +1135,7 @@ setDocumentLocator() {
 }
 </code></pre>
 <p>此事件處理的結果可以處理並寫入從<code>MediaDescriptor</code>提取的<code>XOutputStream</code>。</p>
-<h3 id="xml_2">XML過濾器檢測</h3>
+<h3 id="xml">XML過濾器檢測</h3>
 <p>符合不同DTD規範的XML文件數量意味著單一過濾器和文件類型定義不足以處理所有可能的可用格式。為了允許LibreOffice處理多個過濾器定義和實現，有必要實現一個額外的過濾器檢測模塊，該模塊能夠根據其<code>DocType</code>聲明確定正在讀取的XML文件的類型。</p>
 <p>為了實現這一點，可以實現一個過濾器檢測服務<a href="https://api.libreoffice.org/docs/idl/ref/servicecom_1_1sun_1_1star_1_1document_1_1ExtendedTypeDetection.html">com.sun.star.document.ExtendedTypeDetection</a>，它能夠處理和區分許多不同的基於XML的文件格式。這種類型的服務取代了使用文件後綴來確定類型的基本<em>flat</em>檢測，而是執行<em>deep</em>檢測，使用文件的內部結構和內容來檢測其真實類型。</p>
 <h4 id="_9">深度檢測的要求</h4>
